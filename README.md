@@ -10,18 +10,18 @@ the separate [`arna`](https://github.com/mahiprime2001/arna) repository.
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+npm run dev      # http://localhost:4300
 npm run build    # outputs static site to dist/
 ```
 
 ## Deploy (Docker, behind host nginx)
 
 The container serves the built static site with nginx and listens on the host at
-**`127.0.0.1:8080`** (container port `80`). Your existing host nginx sits in front
+**`127.0.0.1:4300`** (container port `80`). Your existing host nginx sits in front
 and serves `https://arna.ifleon.com`.
 
 ```bash
-docker compose up -d --build          # site now on 127.0.0.1:8080
+docker compose up -d --build          # site now on 127.0.0.1:4300
 ```
 
 Then wire up host nginx + HTTPS:
