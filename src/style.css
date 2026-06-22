@@ -56,3 +56,13 @@ body {
 .animate-wiggle {
   animation: wiggle 3s ease-in-out infinite;
 }
+
+/* Flowing red "data" dots along the link between the two computers. */
+@keyframes dashflow {
+  to {
+    stroke-dashoffset: -41;
+  }
+}
+.dash-flow {
+  animation: dashflow 1s linear infinite;
+}

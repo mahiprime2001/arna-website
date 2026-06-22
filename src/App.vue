@@ -83,6 +83,55 @@ const year = new Date().getFullYear();
       </div>
     </section>
 
+    <!-- Connection illustration -->
+    <section class="dots border-y-4 border-ink bg-bubble/30 py-16">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="font-display text-3xl font-extrabold md:text-4xl">
+          You ↔ every store, <span class="text-coral">connected</span> 🔌
+        </h2>
+        <p class="mx-auto mt-3 max-w-md font-semibold text-ink/70">
+          Your Console links straight to each store's PC — encrypted, the whole way across.
+        </p>
+
+        <svg
+          class="mx-auto mt-10 w-full max-w-2xl"
+          viewBox="0 0 680 270"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="A Console computer linked to a Store computer by a red connection line"
+        >
+          <!-- red link line (behind the computers) -->
+          <path d="M240 106 C300 56, 380 56, 440 106" stroke="#FF2E2E" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.5 20" class="dash-flow" />
+          <circle cx="240" cy="106" r="9" fill="#FF2E2E" stroke="#15151f" stroke-width="4" />
+          <circle cx="440" cy="106" r="9" fill="#FF2E2E" stroke="#15151f" stroke-width="4" />
+          <!-- link badge -->
+          <circle cx="340" cy="64" r="23" fill="#ffffff" stroke="#15151f" stroke-width="5" />
+          <text x="340" y="73" text-anchor="middle" font-size="24">⚡</text>
+
+          <!-- LEFT computer: Console -->
+          <rect x="60" y="46" width="180" height="120" rx="18" fill="#5BC0EB" stroke="#15151f" stroke-width="6" />
+          <rect x="78" y="62" width="144" height="74" rx="10" fill="#FFF7E8" stroke="#15151f" stroke-width="4" />
+          <circle cx="122" cy="92" r="7" fill="#15151f" />
+          <circle cx="178" cy="92" r="7" fill="#15151f" />
+          <path d="M120 108 q30 22 60 0" stroke="#15151f" stroke-width="4" stroke-linecap="round" fill="none" />
+          <rect x="135" y="166" width="30" height="18" fill="#5BC0EB" stroke="#15151f" stroke-width="6" />
+          <rect x="104" y="182" width="92" height="16" rx="8" fill="#5BC0EB" stroke="#15151f" stroke-width="6" />
+          <text x="150" y="232" text-anchor="middle" class="font-display" font-weight="800" font-size="22" fill="#15151f">CONSOLE</text>
+
+          <!-- RIGHT computer: Store -->
+          <rect x="440" y="46" width="180" height="120" rx="18" fill="#FFD23F" stroke="#15151f" stroke-width="6" />
+          <rect x="458" y="62" width="144" height="74" rx="10" fill="#FFF7E8" stroke="#15151f" stroke-width="4" />
+          <circle cx="502" cy="92" r="7" fill="#15151f" />
+          <circle cx="558" cy="92" r="7" fill="#15151f" />
+          <path d="M500 108 q30 22 60 0" stroke="#15151f" stroke-width="4" stroke-linecap="round" fill="none" />
+          <rect x="515" y="166" width="30" height="18" fill="#FFD23F" stroke="#15151f" stroke-width="6" />
+          <rect x="484" y="182" width="92" height="16" rx="8" fill="#FFD23F" stroke="#15151f" stroke-width="6" />
+          <text x="530" y="232" text-anchor="middle" class="font-display" font-weight="800" font-size="22" fill="#15151f">STORE</text>
+        </svg>
+      </div>
+    </section>
+
     <!-- Stats band -->
     <section class="border-y-4 border-ink bg-ink py-12">
       <div class="mx-auto grid max-w-5xl grid-cols-2 gap-5 px-6 md:grid-cols-4">
