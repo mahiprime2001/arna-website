@@ -4,14 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#08080a",
-        panel: "#0e0e12",
-        accent: "#6d5efc",
-        accent2: "#22d3ee",
+        cream: "#FFF7E8",
+        ink: "#15151f",
+        sun: "#FFD23F",
+        sky: "#5BC0EB",
+        coral: "#FF6B6B",
+        grape: "#9B5DE5",
+        mint: "#06D6A0",
+        bubble: "#FF8FAB",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        display: ['"Baloo 2"', "system-ui", "cursive"],
+        body: ['"Nunito"', "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        popsm: "3px 3px 0 0 #15151f",
+        pop: "6px 6px 0 0 #15151f",
+        poplg: "10px 10px 0 0 #15151f",
       },
     },
   },

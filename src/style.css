@@ -3,27 +3,56 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html,
 body {
   margin: 0;
-  background-color: #08080a;
-  color: #e7e7ea;
+  background-color: #fff7e8;
+  color: #15151f;
+  font-family: "Nunito", system-ui, sans-serif;
 }
 
-.backdrop-grid {
-  background-image:
-    radial-gradient(60rem 40rem at 50% -10%, rgba(109, 94, 252, 0.18), transparent 70%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size:
-    100% 100%,
-    44px 44px,
-    44px 44px;
+/* Playful polka-dot backdrop. */
+.dots {
+  background-image: radial-gradient(rgba(21, 21, 31, 0.13) 1.6px, transparent 1.6px);
+  background-size: 22px 22px;
 }
 
-.glow-border {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Press effect: card/button slides into its own shadow on hover. */
+.pop {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.pop:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 0 #15151f;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
 }
