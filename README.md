@@ -14,19 +14,27 @@ npm run dev      # http://localhost:5173
 npm run build    # outputs static site to dist/
 ```
 
-## Deploy (Docker)
+## Deploy (Docker, behind host nginx)
 
-Self-contained — nginx serves the built site, Caddy terminates HTTPS:
+The container serves the built static site with nginx and listens on the host at
+**`127.0.0.1:8080`** (container port `80`). Your existing host nginx sits in front
+and serves `https://arna.ifleon.com`.
 
 ```bash
-docker compose up -d --build
+docker compose up -d --build          # site now on 127.0.0.1:8080
 ```
 
-Point the `arna.ifleon.com` A-record at the host first; Caddy obtains the TLS
-certificate automatically.
+Then wire up host nginx + HTTPS:
 
-> If you host this behind an existing reverse proxy on ifleon, you can drop the
-> `caddy` service and just run the `website` container (it listens on port 80).
+```bash
+sudo cp nginx/arna.ifleon.com.conf /etc/nginx/sites-available/arna.ifleon.com
+sudo ln -s /etc/nginx/sites-available/arna.ifleon.com /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+sudo certbot --nginx -d arna.ifleon.com     # adds the SSL block automatically
+```
+
+Point the `arna.ifleon.com` A-record at the host first. To change the port, edit
+the `ports:` mapping in `docker-compose.yml` and the `proxy_pass` in the nginx conf.
 
 ## Stack
 

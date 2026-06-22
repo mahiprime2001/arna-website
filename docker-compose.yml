@@ -1,29 +1,14 @@
-# Arna website — static Vue site (nginx) behind Caddy for automatic HTTPS.
+# Arna website — static Vue site served by nginx inside the container,
+# exposed on host port 8080. Your existing host nginx sits in front of it and
+# serves https://arna.ifleon.com (see nginx/arna.ifleon.com.conf).
+#
 #   docker compose up -d --build
 #
-# If you host behind an existing proxy on ifleon, remove the `caddy` service and
-# map the website port instead, e.g.  ports: ["8080:80"].
+# Change "8080" below if that port is already taken on the host.
 
 services:
   website:
     build: .
     restart: unless-stopped
-    expose:
-      - "80"
-
-  caddy:
-    image: caddy:2-alpine
-    restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - website
-
-volumes:
-  caddy_data:
-  caddy_config:
+      - "127.0.0.1:8080:80"
