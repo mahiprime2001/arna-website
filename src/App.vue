@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const modules = [
-  { name: "Remote", desc: "Full control of any store PC — screen, mouse, keyboard, multi-monitor.", emoji: "🖥️", color: "bg-sky", rotate: "-rotate-2" },
-  { name: "Fleet", desc: "Live health of every store — disk, queues, status — and one-click remote fixes.", emoji: "📊", color: "bg-sun", rotate: "rotate-2" },
-  { name: "Chat", desc: "Live and persistent messaging, with broadcast to every store at once.", emoji: "💬", color: "bg-mint", rotate: "-rotate-1" },
+  { name: "Remote", desc: "Full control of any computer — screen, mouse, keyboard, multi-monitor.", emoji: "🖥️", color: "bg-sky", rotate: "-rotate-2" },
+  { name: "Fleet", desc: "Live health of every device — disk, apps, status — and one-click remote fixes.", emoji: "📊", color: "bg-sun", rotate: "rotate-2" },
+  { name: "Chat", desc: "Live and persistent messaging, with broadcast to every device at once.", emoji: "💬", color: "bg-mint", rotate: "-rotate-1" },
   { name: "Meet", desc: "Audio and video calls with screen share — built on the same engine.", emoji: "🎥", color: "bg-coral", rotate: "rotate-1" },
   { name: "Files", desc: "Drag-and-drop transfer, peer-to-peer for big files, both directions.", emoji: "📦", color: "bg-grape", rotate: "-rotate-2" },
 ];
@@ -11,12 +11,12 @@ const stats = [
   { n: "1", label: "app to rule them all", emoji: "📱" },
   { n: "5+", label: "tools, one engine", emoji: "🧰" },
   { n: "0", label: "banners & time limits", emoji: "🚫" },
-  { n: "∞", label: "stores, your rules", emoji: "🏪" },
+  { n: "∞", label: "devices, your rules", emoji: "💻" },
 ];
 
 const steps = [
-  { n: "1", title: "Install", desc: "Pop the Agent on each store PC and the Console on yours. Two clicks.", emoji: "📥", color: "bg-sky" },
-  { n: "2", title: "Connect", desc: "Click a store, they tap Accept — and you're in. No fuss, no codes to chase.", emoji: "🤝", color: "bg-sun" },
+  { n: "1", title: "Install", desc: "Pop the Agent on each computer and the Console on yours. Two clicks.", emoji: "📥", color: "bg-sky" },
+  { n: "2", title: "Connect", desc: "Click a device, they tap Accept — and you're in. No fuss, no codes to chase.", emoji: "🤝", color: "bg-sun" },
   { n: "3", title: "Control", desc: "Drive the screen, share files, and chat — all end-to-end encrypted.", emoji: "🎮", color: "bg-coral" },
 ];
 
@@ -29,9 +29,9 @@ const benefits = [
 
 const faqs = [
   { q: "Is it really self-hosted?", a: "Yep — the whole thing runs on your own server. Nothing phones home." },
-  { q: "Do staff see when I connect?", a: "Always. They get a friendly popup and tap Accept before anything starts." },
+  { q: "Do people see when I connect?", a: "Always. They get a friendly popup and tap Accept before anything starts." },
   { q: "What about big files?", a: "They zip straight PC-to-PC, peer-to-peer — fast, private, and they skip the server." },
-  { q: "Does it work across different stores?", a: "That's the whole point. One Console connects to every store in your network." },
+  { q: "Can it connect to any computer?", a: "Yep — anything with the Agent installed. One Console reaches every device, wherever it is." },
 ];
 
 const year = new Date().getFullYear();
@@ -66,14 +66,14 @@ const year = new Date().getFullYear();
           Self-hosted · end-to-end encrypted 🔒
         </p>
         <h1 class="font-display text-5xl font-extrabold leading-[1.05] md:text-7xl">
-          Remote control for your
+          Remote control for
           <span class="relative whitespace-nowrap">
-            <span class="relative z-10 rounded-2xl border-4 border-ink bg-sun px-3 shadow-pop">whole crew</span>
+            <span class="relative z-10 rounded-2xl border-4 border-ink bg-sun px-3 shadow-pop">any device</span>
           </span>
-          of stores
+          , anywhere
         </h1>
         <p class="mx-auto mt-8 max-w-xl text-lg font-semibold text-ink/70">
-          One friendly app to support, monitor, message, and meet across every store —
+          One friendly app to support, monitor, message, and meet across all your computers —
           running on your own infrastructure, owned end to end.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -87,10 +87,10 @@ const year = new Date().getFullYear();
     <section class="dots border-y-4 border-ink bg-bubble/30 py-16">
       <div class="mx-auto max-w-3xl px-6 text-center">
         <h2 class="font-display text-3xl font-extrabold md:text-4xl">
-          You ↔ every store, <span class="text-coral">connected</span> 🔌
+          You ↔ any device, <span class="text-coral">connected</span> 🔌
         </h2>
         <p class="mx-auto mt-3 max-w-md font-semibold text-ink/70">
-          Your Console links straight to each store's PC — encrypted, the whole way across.
+          Your Console links straight to any computer — encrypted, the whole way across.
         </p>
 
         <svg
@@ -99,7 +99,7 @@ const year = new Date().getFullYear();
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label="A Console computer linked to a Store computer by a red connection line"
+          aria-label="A Console computer linked to any other computer by a red connection line"
         >
           <!-- red link line (behind the computers) -->
           <path d="M240 106 C300 56, 380 56, 440 106" stroke="#FF2E2E" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.5 20" class="dash-flow" />
@@ -119,7 +119,7 @@ const year = new Date().getFullYear();
           <rect x="104" y="182" width="92" height="16" rx="8" fill="#5BC0EB" stroke="#15151f" stroke-width="6" />
           <text x="150" y="232" text-anchor="middle" class="font-display" font-weight="800" font-size="22" fill="#15151f">CONSOLE</text>
 
-          <!-- RIGHT computer: Store -->
+          <!-- RIGHT computer: any device -->
           <rect x="440" y="46" width="180" height="120" rx="18" fill="#FFD23F" stroke="#15151f" stroke-width="6" />
           <rect x="458" y="62" width="144" height="74" rx="10" fill="#FFF7E8" stroke="#15151f" stroke-width="4" />
           <circle cx="502" cy="92" r="7" fill="#15151f" />
@@ -127,7 +127,7 @@ const year = new Date().getFullYear();
           <path d="M500 108 q30 22 60 0" stroke="#15151f" stroke-width="4" stroke-linecap="round" fill="none" />
           <rect x="515" y="166" width="30" height="18" fill="#FFD23F" stroke="#15151f" stroke-width="6" />
           <rect x="484" y="182" width="92" height="16" rx="8" fill="#FFD23F" stroke="#15151f" stroke-width="6" />
-          <text x="530" y="232" text-anchor="middle" class="font-display" font-weight="800" font-size="22" fill="#15151f">STORE</text>
+          <text x="530" y="232" text-anchor="middle" class="font-display" font-weight="800" font-size="22" fill="#15151f">ANY PC</text>
         </svg>
       </div>
     </section>
@@ -202,10 +202,10 @@ const year = new Date().getFullYear();
         <p class="mx-auto mb-14 mt-4 max-w-xl text-center text-lg font-semibold text-ink/70">We ship it tool by tool — here's what's landed and what's coming next.</p>
         <ol class="relative space-y-6">
           <li v-for="(step, i) in [
-              { phase: 'Now', title: 'Remote control + Fleet health', desc: 'Take over any store PC, and watch every store\'s health from one dashboard.', emoji: '🚀', color: 'bg-sun', done: true },
+              { phase: 'Now', title: 'Remote control + Fleet health', desc: 'Take over any computer, and watch every device\'s health from one dashboard.', emoji: '🚀', color: 'bg-sun', done: true },
               { phase: 'Next', title: 'Files + Chat', desc: 'Drag-and-drop file sharing and live messaging on the same connection.', emoji: '💬', color: 'bg-mint', done: false },
               { phase: 'Soon', title: 'Meet — calls & screen share', desc: 'Teams-style audio/video meetings with screen share, built right in.', emoji: '🎥', color: 'bg-coral', done: false },
-              { phase: 'Later', title: 'Broadcast, recording & roles', desc: 'Announce to all stores, record sessions, and fine-grained access + audit.', emoji: '🌟', color: 'bg-grape', done: false },
+              { phase: 'Later', title: 'Broadcast, recording & roles', desc: 'Announce to everyone, record sessions, and fine-grained access + audit.', emoji: '🌟', color: 'bg-grape', done: false },
             ]" :key="step.title" class="flex items-stretch gap-4 sm:gap-6">
             <div class="flex flex-col items-center">
               <span :class="step.color" class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border-4 border-ink text-2xl shadow-popsm">{{ step.emoji }}</span>
@@ -246,7 +246,7 @@ const year = new Date().getFullYear();
         <span class="animate-wiggle absolute -right-3 -top-4 text-5xl" aria-hidden="true">🌟</span>
         <h2 class="font-display text-4xl font-extrabold md:text-5xl">Get the Console 🎮</h2>
         <p class="mx-auto mt-4 max-w-md text-lg font-semibold text-white/90">
-          Install the Console to connect, and the Agent on each store PC. Builds are published per release.
+          Install the Console to connect, and the Agent on each computer. Builds are published per release.
         </p>
         <div class="mt-8 inline-flex -rotate-1 items-center gap-2 rounded-2xl border-4 border-ink bg-sun px-6 py-3 font-display text-lg font-extrabold text-ink shadow-pop">
           🪟 Windows build — coming with the first release
