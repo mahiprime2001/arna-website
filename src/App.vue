@@ -5,6 +5,8 @@ const modules = [
   { name: "Chat", desc: "Live and persistent messaging, with broadcast to every device at once.", emoji: "💬", color: "bg-mint", rotate: "-rotate-1" },
   { name: "Meet", desc: "Audio and video calls with screen share — built on the same engine.", emoji: "🎥", color: "bg-coral", rotate: "rotate-1" },
   { name: "Files", desc: "Drag-and-drop transfer, peer-to-peer for big files, both directions.", emoji: "📦", color: "bg-grape", rotate: "-rotate-2" },
+  { name: "SSH", desc: "Jump into any server's terminal — and run commands across many at once.", emoji: "🐚", color: "bg-bubble", rotate: "rotate-1" },
+  { name: "FTP", desc: "Browse and move files over SFTP/FTP — all your servers in one place.", emoji: "🗂️", color: "bg-sky", rotate: "-rotate-2" },
 ];
 
 const stats = [
@@ -32,6 +34,15 @@ const faqs = [
   { q: "Do people see when I connect?", a: "Always. They get a friendly popup and tap Accept before anything starts." },
   { q: "What about big files?", a: "They zip straight PC-to-PC, peer-to-peer — fast, private, and they skip the server." },
   { q: "Can it connect to any computer?", a: "Yep — anything with the Agent installed. One Console reaches every device, wherever it is." },
+  { q: "Can I manage my servers too?", a: "Yes — open an SSH terminal or move files over SFTP/FTP to all your servers, right inside Arna." },
+];
+
+const roadmap = [
+  { phase: "Now", title: "Remote control + Fleet health", desc: "Take over any computer, and watch every device's health from one dashboard.", emoji: "🚀", color: "bg-sun", done: true },
+  { phase: "Next", title: "Files + Chat", desc: "Drag-and-drop file sharing and live messaging on the same connection.", emoji: "💬", color: "bg-mint", done: false },
+  { phase: "Soon", title: "Servers — SSH & FTP", desc: "Open a terminal or move files on all your servers at once, right inside Arna.", emoji: "🗄️", color: "bg-bubble", done: false },
+  { phase: "Soon", title: "Meet — calls & screen share", desc: "Teams-style audio/video meetings with screen share, built right in.", emoji: "🎥", color: "bg-coral", done: false },
+  { phase: "Later", title: "Broadcast, recording & roles", desc: "Announce to everyone, record sessions, and fine-grained access + audit.", emoji: "🌟", color: "bg-grape", done: false },
 ];
 
 const year = new Date().getFullYear();
@@ -73,8 +84,8 @@ const year = new Date().getFullYear();
           , anywhere
         </h1>
         <p class="mx-auto mt-8 max-w-xl text-lg font-semibold text-ink/70">
-          One friendly app to support, monitor, message, and meet across all your computers —
-          running on your own infrastructure, owned end to end.
+          One friendly app to support, monitor, message, and meet across all your computers
+          and servers — running on your own infrastructure, owned end to end.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a href="#download" class="rounded-2xl border-4 border-ink bg-coral px-7 py-3.5 font-display text-lg font-extrabold text-white shadow-pop pop">Download the app 🎉</a>
@@ -201,15 +212,10 @@ const year = new Date().getFullYear();
         <h2 class="text-center font-display text-4xl font-extrabold md:text-5xl">The <span class="text-coral">adventure</span> ahead 🗺️</h2>
         <p class="mx-auto mb-14 mt-4 max-w-xl text-center text-lg font-semibold text-ink/70">We ship it tool by tool — here's what's landed and what's coming next.</p>
         <ol class="relative space-y-6">
-          <li v-for="(step, i) in [
-              { phase: 'Now', title: 'Remote control + Fleet health', desc: 'Take over any computer, and watch every device\'s health from one dashboard.', emoji: '🚀', color: 'bg-sun', done: true },
-              { phase: 'Next', title: 'Files + Chat', desc: 'Drag-and-drop file sharing and live messaging on the same connection.', emoji: '💬', color: 'bg-mint', done: false },
-              { phase: 'Soon', title: 'Meet — calls & screen share', desc: 'Teams-style audio/video meetings with screen share, built right in.', emoji: '🎥', color: 'bg-coral', done: false },
-              { phase: 'Later', title: 'Broadcast, recording & roles', desc: 'Announce to everyone, record sessions, and fine-grained access + audit.', emoji: '🌟', color: 'bg-grape', done: false },
-            ]" :key="step.title" class="flex items-stretch gap-4 sm:gap-6">
+          <li v-for="(step, i) in roadmap" :key="step.title" class="flex items-stretch gap-4 sm:gap-6">
             <div class="flex flex-col items-center">
               <span :class="step.color" class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border-4 border-ink text-2xl shadow-popsm">{{ step.emoji }}</span>
-              <span v-if="i < 3" class="my-1 w-1 flex-1 rounded-full bg-ink/20" />
+              <span v-if="i < roadmap.length - 1" class="my-1 w-1 flex-1 rounded-full bg-ink/20" />
             </div>
             <div class="mb-2 flex-1 rounded-2xl border-4 border-ink bg-white p-5 shadow-pop">
               <div class="flex flex-wrap items-center gap-2">
