@@ -42,15 +42,46 @@ sudo ufw status
 
 ---
 
-## 4. Get the code
+## 4. Get the code (private repo — pick one auth method)
+
+The repo is **private**, so a plain `git clone` will fail with "authentication
+failed". Use one of these:
+
+**Option A — GitHub CLI (simplest):**
 
 ```bash
-git clone https://github.com/mahiprime2001/arna-website.git
+# install gh (Debian/Ubuntu)
+sudo apt install -y gh
+gh auth login            # choose GitHub.com → HTTPS → login with a browser/code
+gh repo clone mahiprime2001/arna-website
 cd arna-website
 ```
 
-> Private repo — authenticate with `gh auth login`, an SSH deploy key, or a
-> personal access token in the clone URL.
+**Option B — Personal access token (good for a server):**
+
+Create a token at GitHub → Settings → Developer settings → **Fine-grained tokens**
+(give it read access to this repo), then:
+
+```bash
+git clone https://<YOUR_TOKEN>@github.com/mahiprime2001/arna-website.git
+cd arna-website
+```
+
+**Option C — SSH deploy key (no account login on the box):**
+
+```bash
+ssh-keygen -t ed25519 -C "arna-website-deploy" -f ~/.ssh/arna_deploy -N ""
+cat ~/.ssh/arna_deploy.pub
+# Paste that key into GitHub → repo → Settings → Deploy keys → Add deploy key
+echo "Host github.com-arna
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/arna_deploy" >> ~/.ssh/config
+git clone git@github.com-arna:mahiprime2001/arna-website.git
+cd arna-website
+```
+
+> For unattended updates later, **Option C** is best — no tokens to rotate.
 
 ## 5. Build & start the container
 
