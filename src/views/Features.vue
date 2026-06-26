@@ -100,6 +100,9 @@ const soon = [
           sides find each other, it never sees what flows between them. Self-host and it never even
           leaves your network.
         </p>
+        <RouterLink to="/security" class="mt-6 inline-block rounded-xl border-4 border-ink bg-sun px-5 py-2.5 font-display font-extrabold text-ink shadow-popsm pop">
+          How security works →
+        </RouterLink>
       </div>
     </section>
 

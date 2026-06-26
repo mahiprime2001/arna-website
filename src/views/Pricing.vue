@@ -1,4 +1,14 @@
 <script setup lang="ts">
+const compare = [
+  { label: "Open source", arna: true, others: false },
+  { label: "Run on your own server", arna: true, others: false },
+  { label: "Free for personal use", arna: true, others: "limited" },
+  { label: "No banners or time limits", arna: true, others: false },
+  { label: "End-to-end encrypted", arna: true, others: true },
+  { label: "Always-ask consent", arna: true, others: true },
+  { label: "Per-seat fees", arna: "never", others: true },
+];
+
 const plans = [
   {
     name: "Personal",
@@ -73,6 +83,36 @@ const plans = [
           >
             {{ p.cta }} →
           </RouterLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="mx-auto max-w-3xl px-6 py-12">
+      <h2 class="text-center font-display text-3xl font-extrabold md:text-4xl">vs the big remote tools 🥊</h2>
+      <p class="mx-auto mb-10 mt-3 max-w-md text-center font-semibold text-ink/70">Same power, minus the fees, banners, and lock-in.</p>
+      <div class="overflow-hidden rounded-3xl border-4 border-ink bg-white shadow-pop">
+        <div class="grid grid-cols-[1fr,auto,auto] items-center gap-x-3 border-b-4 border-ink bg-ink px-4 py-3 font-display text-sm font-extrabold text-cream sm:gap-x-6 sm:px-6">
+          <span></span>
+          <span class="w-16 text-center sm:w-24">Arna</span>
+          <span class="w-16 text-center text-cream/60 sm:w-24">Others</span>
+        </div>
+        <div
+          v-for="(r, i) in compare"
+          :key="r.label"
+          class="grid grid-cols-[1fr,auto,auto] items-center gap-x-3 px-4 py-3 font-semibold sm:gap-x-6 sm:px-6"
+          :class="i % 2 ? 'bg-cream/50' : 'bg-white'"
+        >
+          <span class="text-ink/80">{{ r.label }}</span>
+          <span class="w-16 text-center sm:w-24">
+            <span v-if="r.arna === true" class="inline-grid h-7 w-7 place-items-center rounded-lg border-2 border-ink bg-mint">✓</span>
+            <span v-else class="font-display text-xs font-extrabold text-mint">{{ r.arna }}</span>
+          </span>
+          <span class="w-16 text-center sm:w-24">
+            <span v-if="r.others === true" class="inline-grid h-7 w-7 place-items-center rounded-lg border-2 border-ink bg-white">✓</span>
+            <span v-else-if="r.others === false" class="inline-grid h-7 w-7 place-items-center rounded-lg border-2 border-ink bg-coral text-white">✕</span>
+            <span v-else class="font-display text-xs font-extrabold text-ink/50">{{ r.others }}</span>
+          </span>
         </div>
       </div>
     </section>

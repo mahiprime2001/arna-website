@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import AppPreview from "../components/AppPreview.vue";
+
+const useCases = [
+  { who: "You & family", emoji: "👋", color: "bg-sun", desc: "Fix a parent's laptop from across the country — or hop onto your own PC while you're out." },
+  { who: "Freelancers & IT", emoji: "🧰", color: "bg-sky", desc: "Support clients on demand: see their screen, fix it, send the files — all in one app." },
+  { who: "Small teams", emoji: "🤝", color: "bg-mint", desc: "Help teammates, share files, and chat — no per-seat fees, no codes to chase." },
+  { who: "Whole fleets", emoji: "🏢", color: "bg-coral", desc: "Run remote support across every machine you manage — hosted or on your own server." },
+];
+
 const modules = [
   { name: "Remote control", desc: "See and drive any computer — live screen, mouse, keyboard. Smooth H.264 video.", emoji: "🖥️", color: "bg-sky", rotate: "-rotate-2", live: true },
   { name: "Ask first", desc: "The other PC shows an Accept/Decline popup with a one-time code before anyone connects.", emoji: "🛡️", color: "bg-sun", rotate: "rotate-2", live: true },
@@ -93,6 +102,14 @@ const faqs = [
       </div>
     </section>
 
+    <!-- App preview -->
+    <section class="mx-auto -mt-4 max-w-4xl px-6 pb-16">
+      <AppPreview />
+      <p class="mt-6 text-center font-display text-lg font-bold text-ink/60">
+        See the screen, drive it, swap files, and chat — all in one window. 👆
+      </p>
+    </section>
+
     <!-- Connection illustration -->
     <section class="dots border-y-4 border-ink bg-bubble/30 py-16">
       <div class="mx-auto max-w-3xl px-6 text-center">
@@ -144,6 +161,23 @@ const faqs = [
           <RouterLink :to="w.to" class="mt-5 inline-block self-start rounded-xl border-4 border-ink bg-sun px-5 py-2.5 font-display font-extrabold shadow-popsm pop">
             {{ w.cta }} →
           </RouterLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Made for everyone -->
+    <section class="dots border-t-4 border-ink bg-sun/20 py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <h2 class="text-center font-display text-4xl font-extrabold md:text-5xl">Made for <span class="text-coral">everyone</span> 💛</h2>
+        <p class="mx-auto mb-14 mt-4 max-w-xl text-center text-lg font-semibold text-ink/70">
+          One friend or ten thousand machines — same friendly app, same engine.
+        </p>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div v-for="(u, i) in useCases" :key="u.who" :class="i % 2 ? 'rotate-1' : '-rotate-1'" class="rounded-3xl border-4 border-ink bg-white p-6 shadow-pop pop">
+            <div :class="u.color" class="mb-4 grid h-14 w-14 place-items-center rounded-2xl border-4 border-ink text-3xl shadow-popsm">{{ u.emoji }}</div>
+            <h3 class="font-display text-xl font-extrabold">{{ u.who }}</h3>
+            <p class="mt-2 font-semibold text-ink/75">{{ u.desc }}</p>
+          </div>
         </div>
       </div>
     </section>

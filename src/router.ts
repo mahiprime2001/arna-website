@@ -5,6 +5,7 @@ const routes = [
   { path: "/features", name: "features", component: () => import("./views/Features.vue") },
   { path: "/pricing", name: "pricing", component: () => import("./views/Pricing.vue") },
   { path: "/self-host", name: "self-host", component: () => import("./views/SelfHost.vue") },
+  { path: "/security", name: "security", component: () => import("./views/Security.vue") },
   { path: "/download", name: "download", component: () => import("./views/Download.vue") },
   // Unknown paths fall back to home.
   { path: "/:pathMatch(.*)*", redirect: "/" },
